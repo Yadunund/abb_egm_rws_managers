@@ -129,6 +129,8 @@ void initializeMotionData(MotionData& motion_data, const RobotControllerDescript
     }
 
     // Add joint information.
+    std::size_t i = 0;
+    double initial_val = 0.0;
     for(const auto& standardized_joint : unit.standardized_joints())
     {
       MotionData::Joint motion_joint{};
@@ -136,12 +138,41 @@ void initializeMotionData(MotionData& motion_data, const RobotControllerDescript
       motion_joint.rotational = standardized_joint.rotating_move();
       motion_joint.lower_limit = standardized_joint.lower_joint_bound();
       motion_joint.upper_limit = standardized_joint.upper_joint_bound();
-      motion_joint.state.position = 0.0;
       motion_joint.state.velocity = 0.0;
       motion_joint.state.effort = 0.0;
-      motion_joint.command.position = 0.0;
+      if (i == 0)
+      {
+        initial_val = 1.27195;
+      }
+      else if (i == 1)
+      {
+        initial_val = 0.54511;
+      }
+      else if (i == 2)
+      {
+        initial_val = 0.69042;
+      }
+      else if (i == 3)
+      {
+        initial_val = 3.04715;
+      }
+      else if (i == 4)
+      {
+        initial_val = -0.32276;
+      }
+      else if (i == 5)
+      {
+        initial_val = -1.75018;
+      }
+      else
+      {
+        initial_val = 0;
+      }
+      motion_joint.state.position = initial_val;
+      motion_joint.command.position = initial_val;
       motion_joint.command.velocity = 0.0;
       motion_unit.joints.push_back(motion_joint);
+      ++i;
     }
 
     return motion_unit;
