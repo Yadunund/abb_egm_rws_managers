@@ -153,7 +153,7 @@ void initializeMotionData(MotionData& motion_data, const RobotControllerDescript
       }
       else if (i == 3)
       {
-        initial_val = -1.2233013;
+        initial_val = 1.2233013;
       }
       else
       {
