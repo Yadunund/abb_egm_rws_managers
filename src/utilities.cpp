@@ -142,27 +142,27 @@ void initializeMotionData(MotionData& motion_data, const RobotControllerDescript
       motion_joint.state.effort = 0.0;
       if (i == 0)
       {
-        initial_val = 1.27195;
+        initial_val = 1.20682;
       }
       else if (i == 1)
       {
-        initial_val = 0.54511;
+        initial_val = 0.81865;
       }
       else if (i == 2)
       {
-        initial_val = 0.69042;
+        initial_val = 0.67590;
       }
       else if (i == 3)
       {
-        initial_val = 3.04715;
+        initial_val = 0.00047;
       }
       else if (i == 4)
       {
-        initial_val = -0.32276;
+        initial_val = 0.10522;
       }
       else if (i == 5)
       {
-        initial_val = -1.75018;
+        initial_val = -1.93055;
       }
       else
       {
